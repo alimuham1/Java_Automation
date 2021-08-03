@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstClass {
+public class BasicLogin {
 
     public static void main(String[] args) throws InterruptedException{
         System.out.println("This is first file");
@@ -20,18 +20,24 @@ public class FirstClass {
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        driver.get("https://search.propertyonion.info/");
+        driver.get("https://search.propertyonion.info/title-search-dashboard");
         driver.manage().window().maximize();
         String title = driver.getTitle();
-
         if(title.equalsIgnoreCase("Search"))
         {
-            System.out.println("Title Matches");
+            System.out.println("Title Matches" + title );
         }
         else
         {
             System.out.println(title);
         }
+        driver.quit();
+
+
+
+
+
+
 
 
 
